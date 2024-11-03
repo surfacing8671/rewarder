@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 369
+  rpc_config:
+    url: https://rpc.pulsechain.com
+  start_block: 20000000
+  contracts:
+  - name: r
+    address:
+    - 0x3173614Ca9b65A0Ae32F258B011B7e27E0f2b837
+    handler: src/EventHandlers.ts
+    events:
+    - event: AmountNotEnough(uint256 buyVolume)
+    - event: EpochCealingReached(uint256 amount)
+    - event: LpAdded(address indexed lpAddress, address indexed router, uint256 dailyMaxPerLp, uint256 dailyMaxPerUserLp, uint256 swapMultiplier, int256 vibeLimit, uint256 randomMultiplier, uint256 divisor, uint256 sellMultiplier, uint256 buyMultiplier)
+    - event: LpLimitReached(uint256 amount)
+    - event: LpRemoved(address indexed lpAddress)
+    - event: PendingRewardsUpdated(address indexed user, uint256 pendingAmount, uint256 epoch, address indexed lpAddress)
+    - event: RewardsCalculated(address indexed user, uint256 amount, uint256 epoch, address indexed lpAddress, int256 vibes, uint256 accumulatedVolume)
+    - event: RewardsDeposited(address indexed depositor, uint256 amount)
+    - event: RewardsTransferred(address indexed user, uint256 amount)
+    - event: TotalPendingRewardsUpdated(uint256 newTotalPending, uint256 epoch)
+    - event: TradeUpdated(address indexed lpAddress, uint256 dailyMaxPerLp, uint256 dailyMaxPerUserLp, uint256 swapMultiplier, int256 vibeLimit, uint256 randomMultiplier, uint256 divisor, uint256 sellMultiplier, uint256 buyMultiplier)
+    - event: TradeVolumeUpdated(address indexed user, address indexed lpAddress, uint256 buyVolume, uint256 sellVolume)
+    - event: VibeToHigh(address indexed user, int256 vibes)
+    - event: Withdrawn(address indexed user, uint256 amount, uint256 epoch)
+rollback_on_reorg: false

@@ -1,0 +1,104 @@
+type R_AmountNotEnough {
+  id: ID!
+  buyVolume: BigInt!
+}
+
+type R_EpochCealingReached {
+  id: ID!
+  amount: BigInt!
+}
+
+type R_LpAdded {
+  id: ID!
+  lpAddress: String!
+  router: String!
+  dailyMaxPerLp: BigInt!
+  dailyMaxPerUserLp: BigInt!
+  swapMultiplier: BigInt!
+  vibeLimit: BigInt!
+  randomMultiplier: BigInt!
+  divisor: BigInt!
+  sellMultiplier: BigInt!
+  buyMultiplier: BigInt!
+}
+
+type R_LpLimitReached {
+  id: ID!
+  amount: BigInt!
+}
+
+type R_LpRemoved {
+  id: ID!
+  lpAddress: String!
+}
+
+type R_PendingRewardsUpdated {
+  id: ID!
+  user: String!
+  pendingAmount: BigInt!
+  epoch: BigInt!
+  lpAddress: String!
+}
+
+type R_RewardsCalculated {
+  id: ID!
+  user: String!
+  amount: BigInt!
+  epoch: BigInt!
+  lpAddress: String!
+  vibes: BigInt!
+  accumulatedVolume: BigInt!
+}
+
+type R_RewardsDeposited {
+  id: ID!
+  depositor: String!
+  amount: BigInt!
+}
+
+type R_RewardsTransferred {
+  id: ID!
+  user: String!
+  amount: BigInt!
+}
+
+type R_TotalPendingRewardsUpdated {
+  id: ID!
+  newTotalPending: BigInt!
+  epoch: BigInt!
+}
+
+type R_TradeUpdated {
+  id: ID!
+  lpAddress: String!
+  dailyMaxPerLp: BigInt!
+  dailyMaxPerUserLp: BigInt!
+  swapMultiplier: BigInt!
+  vibeLimit: BigInt!
+  randomMultiplier: BigInt!
+  divisor: BigInt!
+  sellMultiplier: BigInt!
+  buyMultiplier: BigInt!
+}
+
+type R_TradeVolumeUpdated {
+  id: ID!
+  user: String!
+  lpAddress: String!
+  buyVolume: BigInt!
+  sellVolume: BigInt!
+}
+
+type R_VibeToHigh {
+  id: ID!
+  user: String!
+  vibes: BigInt!
+}
+
+type R_Withdrawn {
+  id: ID!
+  user: String!
+  amount: BigInt!
+  epoch: BigInt!
+}
+
