@@ -25,4 +25,4 @@ networks:
     - event: TradeVolumeUpdated(address indexed user, address indexed lpAddress, uint256 buyVolume, uint256 sellVolume)
     - event: VibeToHigh(address indexed user, int256 vibes)
     - event: Withdrawn(address indexed user, uint256 amount, uint256 epoch)
-rollback_on_reorg: false
+
